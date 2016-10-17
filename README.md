@@ -25,3 +25,4 @@ $ meditate 10
 ## Credits
 
 * Singing Bowl Audio from [here](http://www.freesound.org/people/Garuda1982/sounds/116315/download/116315__garuda1982__big-singing-bowl.wav)
+* Single Bowl original image from [here](https://pixabay.com/p-185211/?no_redirect)
