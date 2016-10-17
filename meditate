@@ -3,15 +3,14 @@
 SCRIPT_DIR=$(dirname -- "$(readlink -- "$BASH_SOURCE")")
 cd $SCRIPT_DIR;
 
-TIMER_DURATION=20
 MEDITATION_TIME=${1:-10}
 BELL_TRACK=singing-bowl.mp3
 TMPFILE=$(mktemp /tmp/meditation-journal.XXXXXX)
 printf "Meditation Log\n\n\n" > ${TMPFILE}
 
 echo Meditating for ${MEDITATION_TIME} minutes
-ffplay -loglevel panic -nodisp -autoexit -t ${TIMER_DURATION} ${BELL_TRACK} && \
+afplay ${BELL_TRACK} && \
 sleep $(( 60 * ${MEDITATION_TIME} )) &&
-ffplay -loglevel panic -nodisp -autoexit -t ${TIMER_DURATION} ${BELL_TRACK} && \
+afplay ${BELL_TRACK} && \
 vim ${TMPFILE} +3 && dayone new < ${TMPFILE}
 rm -rf ${TMPFILE}

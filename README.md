@@ -18,7 +18,6 @@ $ meditate 10
 
 ## Dependencies
 
-* `ffplay` - `brew install ffmpeg`
 * `vim` - `brew install vim`
 * [`dayone cli`](http://dayoneapp.com/tools/cli-man/) - NB: If you have any issues
   installing, then you may need to fix it using instructions [here](http://help.dayoneapp.com/using-the-day-one-cli-with-day-one-2/)
