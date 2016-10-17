@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname -- "$(readlink -- "$BASH_SOURCE")")
+cd $SCRIPT_DIR;
+
+TIMER_DURATION=20
+MEDITATION_TIME=${1:-10}
+BELL_TRACK=singing-bowl.wav
+TMPFILE=$(mktemp /tmp/meditation-journal.XXXXXX)
+printf "Meditation Log\n\n\n" > ${TMPFILE}
+
+echo Meditating for ${MEDITATION_TIME} minutes
+ffplay -nodisp -autoexit -t ${TIMER_DURATION} ${BELL_TRACK} && \
+sleep $(( 60 * ${MEDITATION_TIME} )) &&
+ffplay -nodisp -autoexit -t ${TIMER_DURATION} ${BELL_TRACK} && \
+vim ${TMPFILE} +3 && dayone new < ${TMPFILE}
+rm -rf ${TMPFILE}
