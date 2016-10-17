@@ -5,7 +5,7 @@ cd $SCRIPT_DIR;
 
 TIMER_DURATION=20
 MEDITATION_TIME=${1:-10}
-BELL_TRACK=singing-bowl.wav
+BELL_TRACK=singing-bowl.mp3
 TMPFILE=$(mktemp /tmp/meditation-journal.XXXXXX)
 printf "Meditation Log\n\n\n" > ${TMPFILE}
 
